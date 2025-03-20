@@ -9,22 +9,24 @@ import type {HTTPResponse} from '../api/HTTPResponse.js';
 
 import type {EventType} from './EventEmitter.js';
 
+const Request = Symbol('NetworkManager.Request');
+const RequestServedFromCache = Symbol('NetworkManager.RequestServedFromCache');
+const Response = Symbol('NetworkManager.Response');
+const RequestFailed = Symbol('NetworkManager.RequestFailed');
+const RequestFinished = Symbol('NetworkManager.RequestFinished');
 /**
  * We use symbols to prevent any external parties listening to these events.
  * They are internal to Puppeteer.
  *
  * @internal
  */
-// eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace NetworkManagerEvent {
-  export const Request = Symbol('NetworkManager.Request');
-  export const RequestServedFromCache = Symbol(
-    'NetworkManager.RequestServedFromCache',
-  );
-  export const Response = Symbol('NetworkManager.Response');
-  export const RequestFailed = Symbol('NetworkManager.RequestFailed');
-  export const RequestFinished = Symbol('NetworkManager.RequestFinished');
-}
+export const NetworkManagerEvent = {
+  Request,
+  RequestServedFromCache,
+  Response,
+  RequestFailed,
+  RequestFinished,
+} as const;
 
 /**
  * @internal

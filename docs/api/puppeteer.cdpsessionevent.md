@@ -2,39 +2,18 @@
 sidebar_label: CDPSessionEvent
 ---
 
-# CDPSessionEvent namespace
+# CDPSessionEvent variable
 
 Events that the CDPSession class emits.
 
 ### Signature
 
 ```typescript
-export declare namespace CDPSessionEvent
+CDPSessionEvent: {
+    readonly Disconnected: typeof Disconnected;
+    readonly Swapped: typeof Swapped;
+    readonly Ready: typeof Ready;
+    readonly SessionAttached: "sessionattached";
+    readonly SessionDetached: "sessiondetached";
+}
 ```
-
-## Variables
-
-<table><thead><tr><th>
-
-Variable
-
-</th><th>
-
-Description
-
-</th></tr></thead>
-<tbody><tr><td>
-
-<span id="sessionattached">[SessionAttached](./puppeteer.cdpsessionevent.sessionattached.md)</span>
-
-</td><td>
-
-</td></tr>
-<tr><td>
-
-<span id="sessiondetached">[SessionDetached](./puppeteer.cdpsessionevent.sessiondetached.md)</span>
-
-</td><td>
-
-</td></tr>
-</tbody></table>

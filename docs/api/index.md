@@ -1298,11 +1298,11 @@ The TouchHandle interface exposes methods to manipulate touches that have been s
 </td></tr>
 </tbody></table>
 
-## Namespaces
+## Variables
 
 <table><thead><tr><th>
 
-Namespace
+Variable
 
 </th><th>
 
@@ -1318,20 +1318,7 @@ Description
 Events that the CDPSession class emits.
 
 </td></tr>
-</tbody></table>
-
-## Variables
-
-<table><thead><tr><th>
-
-Variable
-
-</th><th>
-
-Description
-
-</th></tr></thead>
-<tbody><tr><td>
+<tr><td>
 
 <span id="default_intercept_resolution_priority">[DEFAULT_INTERCEPT_RESOLUTION_PRIORITY](./puppeteer.default_intercept_resolution_priority.md)</span>
 

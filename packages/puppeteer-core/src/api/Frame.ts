@@ -168,6 +168,29 @@ export interface FrameAddStyleTagOptions {
   content?: string;
 }
 
+const FrameNavigated = Symbol('Frame.FrameNavigated');
+const FrameSwapped = Symbol('Frame.FrameSwapped');
+const LifecycleEvent = Symbol('Frame.LifecycleEvent');
+const FrameNavigatedWithinDocument = Symbol(
+  'Frame.FrameNavigatedWithinDocument',
+);
+const FrameDetached = Symbol('Frame.FrameDetached');
+const FrameSwappedByActivation = Symbol('Frame.FrameSwappedByActivation');
+/**
+ * We use symbols to prevent external parties listening to these events.
+ * They are internal to Puppeteer.
+ *
+ * @internal
+ */
+export const FrameEvent = {
+  FrameNavigated,
+  FrameSwapped,
+  LifecycleEvent,
+  FrameNavigatedWithinDocument,
+  FrameDetached,
+  FrameSwappedByActivation,
+} as const;
+
 /**
  * @public
  */
@@ -184,26 +207,6 @@ export interface FrameEvents extends Record<EventType, unknown> {
   [FrameEvent.FrameDetached]: Frame;
   /** @internal */
   [FrameEvent.FrameSwappedByActivation]: undefined;
-}
-
-/**
- * We use symbols to prevent external parties listening to these events.
- * They are internal to Puppeteer.
- *
- * @internal
- */
-// eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace FrameEvent {
-  export const FrameNavigated = Symbol('Frame.FrameNavigated');
-  export const FrameSwapped = Symbol('Frame.FrameSwapped');
-  export const LifecycleEvent = Symbol('Frame.LifecycleEvent');
-  export const FrameNavigatedWithinDocument = Symbol(
-    'Frame.FrameNavigatedWithinDocument',
-  );
-  export const FrameDetached = Symbol('Frame.FrameDetached');
-  export const FrameSwappedByActivation = Symbol(
-    'Frame.FrameSwappedByActivation',
-  );
 }
 
 /**

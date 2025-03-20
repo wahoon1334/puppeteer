@@ -11,25 +11,33 @@ import type {EventType} from '../common/EventEmitter.js';
 import type {CdpFrame} from './Frame.js';
 import type {IsolatedWorld} from './IsolatedWorld.js';
 
+const FrameAttached = Symbol('FrameManager.FrameAttached');
+const FrameNavigated = Symbol('FrameManager.FrameNavigated');
+const FrameDetached = Symbol('FrameManager.FrameDetached');
+const FrameSwapped = Symbol('FrameManager.FrameSwapped');
+const LifecycleEvent = Symbol('FrameManager.LifecycleEvent');
+const FrameNavigatedWithinDocument = Symbol(
+  'FrameManager.FrameNavigatedWithinDocument',
+);
+const ConsoleApiCalled = Symbol('FrameManager.ConsoleApiCalled');
+const BindingCalled = Symbol('FrameManager.BindingCalled');
+
 /**
  * We use symbols to prevent external parties listening to these events.
  * They are internal to Puppeteer.
  *
  * @internal
  */
-// eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace FrameManagerEvent {
-  export const FrameAttached = Symbol('FrameManager.FrameAttached');
-  export const FrameNavigated = Symbol('FrameManager.FrameNavigated');
-  export const FrameDetached = Symbol('FrameManager.FrameDetached');
-  export const FrameSwapped = Symbol('FrameManager.FrameSwapped');
-  export const LifecycleEvent = Symbol('FrameManager.LifecycleEvent');
-  export const FrameNavigatedWithinDocument = Symbol(
-    'FrameManager.FrameNavigatedWithinDocument',
-  );
-  export const ConsoleApiCalled = Symbol('FrameManager.ConsoleApiCalled');
-  export const BindingCalled = Symbol('FrameManager.BindingCalled');
-}
+export const FrameManagerEvent = {
+  FrameAttached,
+  FrameNavigated,
+  FrameDetached,
+  FrameSwapped,
+  LifecycleEvent,
+  FrameNavigatedWithinDocument,
+  ConsoleApiCalled,
+  BindingCalled,
+} as const;
 
 /**
  * @internal

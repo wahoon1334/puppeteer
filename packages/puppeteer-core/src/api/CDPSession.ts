@@ -15,27 +15,33 @@ export type CDPEvents = {
   [Property in keyof ProtocolMapping.Events]: ProtocolMapping.Events[Property][0];
 };
 
+const Disconnected = Symbol('CDPSession.Disconnected');
+const Swapped = Symbol('CDPSession.Swapped');
+const Ready = Symbol('CDPSession.Ready');
 /**
  * Events that the CDPSession class emits.
  *
  * @public
  */
-// eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace CDPSessionEvent {
-  /** @internal */
-  export const Disconnected = Symbol('CDPSession.Disconnected');
-  /** @internal */
-  export const Swapped = Symbol('CDPSession.Swapped');
+export const CDPSessionEvent = {
+  /**
+   * @internal
+   */
+  Disconnected,
+  /**
+   * @internal
+   */
+  Swapped,
   /**
    * Emitted when the session is ready to be configured during the auto-attach
    * process. Right after the event is handled, the session will be resumed.
    *
    * @internal
    */
-  export const Ready = Symbol('CDPSession.Ready');
-  export const SessionAttached = 'sessionattached' as const;
-  export const SessionDetached = 'sessiondetached' as const;
-}
+  Ready,
+  SessionAttached: 'sessionattached',
+  SessionDetached: 'sessiondetached',
+} as const;
 
 /**
  * @public

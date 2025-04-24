@@ -2,6 +2,27 @@
 
 Combined changelog for puppeteer and puppeteer-core.
 
+## [24.7.2](https://github.com/puppeteer/puppeteer/compare/puppeteer-v24.7.1...puppeteer-v24.7.2) (2025-04-24)
+
+
+### Miscellaneous Chores
+
+* **puppeteer:** Synchronize puppeteer versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * puppeteer-core bumped from 24.7.1 to 24.7.2
+
+
+### Bug Fixes
+
+* roll to Chrome 135.0.7049.114 ([#13811](https://github.com/puppeteer/puppeteer/issues/13811)) ([3d32f72](https://github.com/puppeteer/puppeteer/commit/3d32f7232de1d67a23e73ed1119b95ba397b379f))
+* roll to Chrome 135.0.7049.97 ([#13802](https://github.com/puppeteer/puppeteer/issues/13802)) ([d0e6492](https://github.com/puppeteer/puppeteer/commit/d0e649266b244ae3ec153e62f05b40ce819f7049))
+
+
 ## [24.7.1](https://github.com/puppeteer/puppeteer/compare/puppeteer-v24.7.0...puppeteer-v24.7.1) (2025-04-22)
 
 
